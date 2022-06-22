@@ -1,0 +1,95 @@
+{
+    "items": [
+        {
+            "id": 0,
+            "name": "Akamanah Set",
+            "game": "Lineage II",
+            "price": 500,
+            "image": "/mocks/images/akamanahSet.png"
+        },
+        {
+            "id": 1,
+            "name": "Blue Turtle Shell",
+            "game": "Mario Cart",
+            "price": 100,
+            "image": "/mocks/images/blueTurtleShell.png"
+        },
+        {
+            "id": 2,
+            "name": "Cardboard Box",
+            "game": "Metal Gear",
+            "price": 45,
+            "image": "/mocks/images/box.png"
+        },
+        {
+            "id": 3,
+            "name": "Companion Cube",
+            "game": "Portal",
+            "price": 135,
+            "image": "/mocks/images/companionCube.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Crowbar",
+            "game": "Half Life",
+            "price": 164,
+            "image": "/mocks/images/crowbar.png"
+        },
+        {
+            "id": 5,
+            "name": "Crucible Blade",
+            "game": "Doom",
+            "price": 367,
+            "image": "/mocks/images/crucibleBlade.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Healing Potion",
+            "game": "Lineage II",
+            "price": 9,
+            "image": "/mocks/images/HealingPotion.png"
+        },
+        {
+            "id": 7,
+            "name": "Jetpack",
+            "game": "Grand Theft Auto",
+            "price": 486,
+            "image": "/mocks/images/jetpack.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Master Sword",
+            "game": "Legend of Zelda",
+            "price": 238,
+            "image": "/mocks/images/masterSword.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Pip Boy",
+            "game": "Fallout",
+            "price": 120,
+            "image": "/mocks/images/pip-Boy.png"
+        },
+        {
+            "id": 10,
+            "name": "Pokeball",
+            "game": "Pokemon",
+            "price": 35,
+            "image": "/mocks/images/pokeball.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Super Mushroom",
+            "game": "Super Mario",
+            "price": 149,
+            "image": "/mocks/images/powerUpMushroom.jpg"
+        },
+        {
+            "id": 12,
+            "name": "Ring",
+            "game": "Sonic",
+            "price": 1,
+            "image": "/mocks/images/sonic-ring.jpg"
+        }
+    ]
+}

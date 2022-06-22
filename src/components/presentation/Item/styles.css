@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
+@import "../../../paleta.css";
+
+#itemCard {
+    width:300px;
+    height: 350px;
+    margin: 10px;
+    padding: 20px;
+    font-family: 'Ubuntu Mono', monospace;
+    border-style: solid;
+    border-color: var(--detail);
+    border-radius: 10px;
+    color: var(--text);
+    background-color: var(--light-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px black;
+}
+
+#itemCard h4{
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+#itemCard img {
+    width: 200px;
+    height: auto;
+    max-height: 200px;
+    margin-bottom: 5px;
+}
+
+#fromGame {
+    margin-bottom: 20px;
+}
+
+#price {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--alert-text);
+}

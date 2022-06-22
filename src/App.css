@@ -1,3 +1,9 @@
+@import "paleta.css";
+
+body {
+  background-color: var(--lighter-background);
+}
+
 * {
   margin: 0;
   padding: 0;

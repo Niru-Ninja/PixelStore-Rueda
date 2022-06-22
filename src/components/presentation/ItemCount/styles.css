@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import "../../../paleta.css";
 
 #container {
-    color: whitesmoke;
+    color: var(--text);
     font-family: 'VT323', monospace;
     width: 400px;
     padding: 15px;
-    background-color: #454839;
+    background-color: var(--light-background);
     border-style: solid;
-    border-color: #5E7C03;
+    border-color: var(--detail);
     border-width: 3px;
     border-radius: 10px;
 }
@@ -24,9 +25,9 @@ h3 {
     align-items: center;
     width: 100%;
     padding: 0px 15px;
-    background-color: #181b0b;
+    background-color: var(--dark-background);
     border-style: solid;
-    border-color: #5E7C03;
+    border-color: var(--detail);
     border-width: 2px;
     border-radius: 10px;
 }
@@ -38,14 +39,14 @@ h3 {
 
 #amountDiv button {
     cursor: pointer;
-    color: #5E7C03;
+    color: var(--detail);
     border-style: none;
     background-color: rgba(0,0,0,0);
     font-size: 25px;
 }
 
 #addToCartButton {
-    color: lightgrey;
+    color: var(--text);
     font-family: 'VT323', monospace;
     font-size: 20px;
     cursor: pointer;
@@ -53,7 +54,7 @@ h3 {
     width: 100%;
     background-color: rgba(0,0,0,0);
     border-style: solid;
-    border-color: lightgrey;
+    border-color: var(--text);
     border-width: 2px;
     border-radius: 10px;
 }
