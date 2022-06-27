@@ -22,7 +22,6 @@ const ItemListContainer = ({greeting}) => {
     try {
       const response = await promiseProductos;
       const data = await response.json();
-      console.log(data);
       setProductos(data);
     } catch (error) {
       console.log(error);
@@ -37,7 +36,7 @@ const ItemListContainer = ({greeting}) => {
     <div id="itemListContainer">
       <h2>{greeting}</h2>
       {
-        productos.items !== [] ? 
+        productos.items.length > 0 ? 
           <ItemList products={productos}/>
         :
         null
