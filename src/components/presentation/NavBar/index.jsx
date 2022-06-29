@@ -1,19 +1,41 @@
 import React from 'react';
 import CartWidget from '../CartWidget';
 import './styles.css';
+import {Link} from 'react-router-dom';
 
 const NavBar = () => {
+
+    function dropdownFunction() {
+        document.getElementById("dropdownId").classList.toggle("show");
+      }
+      window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("dropdownId");
+          if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+          }
+        }
+      }
+
     return (
-        <nav>
-            <ul>
-                <li><img id="pixelStoreLogo" src='assets/PixelStore-Logo.svg' alt="Pixel Store Logo"/></li>
-                <li><a className="active" href="#home">Home</a></li>
-                <li><a href="#categorias">Categorias</a></li>
-                <li><a href="#contacto">Contactanos</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-            </ul>
+        <div className="navbar">
+            <Link to='/'><img id="pixelStoreLogo" src='assets/PixelStore-Logo.svg' alt="Pixel Store Logo"/></Link>
+            <Link to='/' className='barLink'>Home</Link>
+            <div className="dropdown">
+                <button className="dropbtn" onClick={dropdownFunction}>Categorias 
+                 <i className="fa fa-caret-down"></i>
+                </button>
+                <div className="dropdown-content" id="dropdownId">
+                    <Link to='/category/arma'>Armas</Link>
+                    <Link to='/category/consumible'>Consumibles</Link>
+                    <Link to='/category/miscelaneo'>Misceláneo</Link>
+                </div>
+            </div> 
+            <Link to='/contacto' className='barLink'>Contáctanos</Link>
+            <Link to='/nosotros' className='barLink'>Nosotros</Link>
             <CartWidget/>
-        </nav>
+        </div>
+
     );
 }
 

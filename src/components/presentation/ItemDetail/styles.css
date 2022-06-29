@@ -3,6 +3,7 @@
 
 #productDescription {
     margin: 35px;
+    margin-bottom: 0px;
     width: 650px;
     height: 850px;
     padding: 20px;
@@ -34,11 +35,12 @@
 #detail_description {
     color: var(--text);
     text-align: justify;
+    font-size: 17px;
 }
 
 #detail_price {
-    margin-top: 35px;
+    margin-top: 30px;
     color: var(--alert-text);
     font-weight: bold;
-    font-size: 30px;
+    font-size: 45px;
 }

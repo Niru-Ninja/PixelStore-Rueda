@@ -5,12 +5,11 @@ const ItemCount = ({stock, itemName, onAddToCart}) => {
     const [item, setItem] = useState({name:itemName, amount:1});
 
     const onAddOrSubtract = (cantidad) => {
-        setItem({name: item.name, amount: item.amount + cantidad})
+        setItem({name: item.title, amount: item.amount + cantidad})
     }
 
     return (
         <div id="container">
-            <h3>{itemName}</h3>
             <div id="amountDiv">
                 <button onClick={() => onAddOrSubtract(-1)} disabled={item.amount === 1 ? true : null}>-</button>
                 <p>{item.amount}</p>

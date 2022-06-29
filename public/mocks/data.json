@@ -1,95 +1,121 @@
 {
     "items": [
         {
-            "id": 0,
-            "name": "Akamanah Set",
+            "id": "0",
+            "title": "Akamanah Swords",
+            "description": "Las espadas legendarias forjadas por el mismísimo Gran Kain (dios del caos), no te pierdas esta oportunidad de conseguir estas armas unicas e irremplazables. Nota: Las espadas estan malditas y tenés que matar a una persona cada 24hs con ellas o desaparecerán. Si desaparecen no hago reembolzos.",
             "game": "Lineage II",
             "price": 500,
-            "image": "/mocks/images/akamanahSet.png"
+            "image": "/mocks/images/akamanahSet.png",
+            "category": "arma"
         },
         {
-            "id": 1,
-            "name": "Blue Turtle Shell",
+            "id": "1",
+            "title": "Blue Turtle Shell",
+            "description": "This shell chases after the lead kart and blows up when it reaches its target. Any kart in the blast radius will be knocked over. Those that enter the explosion a bit later will be spun around.",
             "game": "Mario Cart",
             "price": 100,
-            "image": "/mocks/images/blueTurtleShell.png"
+            "image": "/mocks/images/blueTurtleShell.png",
+            "category": "consumible"
         },
         {
-            "id": 2,
-            "name": "Cardboard Box",
+            "id": "2",
+            "title": "Cardboard Box",
+            "description": "Utilizada por las fuerzas especiales para operaciones de sigilo e infiltración, esta caja de cartón de grado militar (completamente diferente a una caja de cartón ordinaria) te ocultará aunque tus enemigos te miren fijo.",
             "game": "Metal Gear",
             "price": 45,
-            "image": "/mocks/images/box.png"
+            "image": "/mocks/images/box.png",
+            "category": "miscelaneo"
         },
         {
-            "id": 3,
-            "name": "Companion Cube",
+            "id": "3",
+            "title": "Companion Cube",
+            "description": "Directamente extraído de una cámara de pruebas de GLaDOS, este cubo te hará compañía hasta en los momentos mas difíciles. Asegurate de no incinerarlo.",
             "game": "Portal",
             "price": 135,
-            "image": "/mocks/images/companionCube.jpg"
+            "image": "/mocks/images/companionCube.jpg",
+            "category": "miscelaneo"
         },
         {
-            "id": 4,
-            "name": "Crowbar",
+            "id": "4",
+            "title": "Crowbar",
+            "description": "Palanca multiusos ideal para despejar obstrucciones, romper objetos, sacar candados de las puertas y partirle la cabeza a zombis.",
             "game": "Half Life",
             "price": 164,
-            "image": "/mocks/images/crowbar.png"
+            "image": "/mocks/images/crowbar.png",
+            "category": "arma"
         },
         {
-            "id": 5,
-            "name": "Crucible Blade",
+            "id": "5",
+            "title": "Crucible Blade",
+            "description": "La espada que derrotó al Icono del Pecado, destruida por su anterior dueño. Se realizaron trabajos de reparación y mantenimiento para unir nuevamente la hoja con el crisol. 100% como nueva y en condiciones para ser usada!",
             "game": "Doom",
             "price": 367,
-            "image": "/mocks/images/crucibleBlade.jpg"
+            "image": "/mocks/images/crucibleBlade.jpg",
+            "category": "arma"
         },
         {
-            "id": 6,
-            "name": "Healing Potion",
+            "id": "6",
+            "title": "Healing Potion",
+            "description": "Estas pociones incrementan la velocidad de curación natural del cuerpo por 15 segundos. Ayudan a regenerar heridas con mayor velocidad. NO CURAN ENFERMEDADES DEJEN DE MANDAR MP PREGUNTANDO.",
             "game": "Lineage II",
             "price": 9,
-            "image": "/mocks/images/HealingPotion.png"
+            "image": "/mocks/images/HealingPotion.png",
+            "category": "consumible"
         },
         {
-            "id": 7,
-            "name": "Jetpack",
+            "id": "7",
+            "title": "Jetpack",
+            "description": "Vuela a donde quieras con este jetpack traído directamente desde San Andreas! Autonomía infinita (No consume combustible, no preguntes como funciona). Con boquillas de control omnidireccional!",
             "game": "Grand Theft Auto",
             "price": 486,
-            "image": "/mocks/images/jetpack.jpg"
+            "image": "/mocks/images/jetpack.jpg",
+            "category": "miscelaneo"
         },
         {
-            "id": 8,
-            "name": "Master Sword",
+            "id": "8",
+            "title": "Master Sword",
+            "description": "La espada legendaria que sella la oscuridad. Su hoja posee un brillo sagrado que puede oponerse a la Calamidad. ATENCION: Solo un héroe elegido por la propia espada puede empuñarla. Si la compras y resulta que la espada no te elige, no te devolveré tu dinero.",
             "game": "Legend of Zelda",
             "price": 238,
-            "image": "/mocks/images/masterSword.jpg"
+            "image": "/mocks/images/masterSword.jpg",
+            "category": "arma"
         },
         {
-            "id": 9,
-            "name": "Pip Boy",
+            "id": "9",
+            "title": "Pip Boy",
+            "description": "The RobCo Pip-Boy is a personal information processor manufactured by RobCo Industries.",
             "game": "Fallout",
             "price": 120,
-            "image": "/mocks/images/pip-Boy.png"
+            "image": "/mocks/images/pip-Boy.png",
+            "category": "miscelaneo"
         },
         {
-            "id": 10,
-            "name": "Pokeball",
+            "id": "10",
+            "title": "Pokeball",
+            "description": "A device for catching wild Pokémon. It’s thrown like a ball at a Pokémon, comfortably encapsulating its target.",
             "game": "Pokemon",
             "price": 35,
-            "image": "/mocks/images/pokeball.jpg"
+            "image": "/mocks/images/pokeball.jpg",
+            "category": "miscelaneo"
         },
         {
-            "id": 11,
-            "name": "Super Mushroom",
+            "id": "11",
+            "title": "Super Mushroom",
+            "description": "Makes you grow in height, you gain an extra life.",
             "game": "Super Mario",
             "price": 149,
-            "image": "/mocks/images/powerUpMushroom.jpg"
+            "image": "/mocks/images/powerUpMushroom.jpg",
+            "category": "consumible"
         },
         {
-            "id": 12,
-            "name": "Ring",
+            "id": "12",
+            "title": "Ring",
+            "description": "As long as you hold even one ring, it will protect you from losing a life upon taking damage, losing a portion of your rings.",
             "game": "Sonic",
             "price": 1,
-            "image": "/mocks/images/sonic-ring.jpg"
+            "image": "/mocks/images/sonic-ring.jpg",
+            "category": "miscelaneo"
         }
     ]
 }
