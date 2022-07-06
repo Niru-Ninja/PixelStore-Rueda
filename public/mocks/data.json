@@ -7,7 +7,8 @@
             "game": "Lineage II",
             "price": 500,
             "image": "/mocks/images/akamanahSet.png",
-            "category": "arma"
+            "category": "arma",
+            "stock": 1
         },
         {
             "id": "1",
@@ -16,7 +17,8 @@
             "game": "Mario Cart",
             "price": 100,
             "image": "/mocks/images/blueTurtleShell.png",
-            "category": "consumible"
+            "category": "consumible",
+            "stock": 27
         },
         {
             "id": "2",
@@ -25,7 +27,8 @@
             "game": "Metal Gear",
             "price": 45,
             "image": "/mocks/images/box.png",
-            "category": "miscelaneo"
+            "category": "miscelaneo",
+            "stock": 562
         },
         {
             "id": "3",
@@ -34,7 +37,8 @@
             "game": "Portal",
             "price": 135,
             "image": "/mocks/images/companionCube.jpg",
-            "category": "miscelaneo"
+            "category": "miscelaneo",
+            "stock": 53
         },
         {
             "id": "4",
@@ -43,7 +47,8 @@
             "game": "Half Life",
             "price": 164,
             "image": "/mocks/images/crowbar.png",
-            "category": "arma"
+            "category": "arma",
+            "stock": 268
         },
         {
             "id": "5",
@@ -52,7 +57,8 @@
             "game": "Doom",
             "price": 367,
             "image": "/mocks/images/crucibleBlade.jpg",
-            "category": "arma"
+            "category": "arma",
+            "stock": 1
         },
         {
             "id": "6",
@@ -61,7 +67,8 @@
             "game": "Lineage II",
             "price": 9,
             "image": "/mocks/images/HealingPotion.png",
-            "category": "consumible"
+            "category": "consumible",
+            "stock": 1235
         },
         {
             "id": "7",
@@ -70,7 +77,8 @@
             "game": "Grand Theft Auto",
             "price": 486,
             "image": "/mocks/images/jetpack.jpg",
-            "category": "miscelaneo"
+            "category": "miscelaneo",
+            "stock": 27
         },
         {
             "id": "8",
@@ -79,7 +87,8 @@
             "game": "Legend of Zelda",
             "price": 238,
             "image": "/mocks/images/masterSword.jpg",
-            "category": "arma"
+            "category": "arma",
+            "stock": 1
         },
         {
             "id": "9",
@@ -88,7 +97,8 @@
             "game": "Fallout",
             "price": 120,
             "image": "/mocks/images/pip-Boy.png",
-            "category": "miscelaneo"
+            "category": "miscelaneo",
+            "stock": 63
         },
         {
             "id": "10",
@@ -97,7 +107,8 @@
             "game": "Pokemon",
             "price": 35,
             "image": "/mocks/images/pokeball.jpg",
-            "category": "miscelaneo"
+            "category": "miscelaneo",
+            "stock": 634
         },
         {
             "id": "11",
@@ -106,7 +117,8 @@
             "game": "Super Mario",
             "price": 149,
             "image": "/mocks/images/powerUpMushroom.jpg",
-            "category": "consumible"
+            "category": "consumible",
+            "stock": 52
         },
         {
             "id": "12",
@@ -115,7 +127,8 @@
             "game": "Sonic",
             "price": 1,
             "image": "/mocks/images/sonic-ring.jpg",
-            "category": "miscelaneo"
+            "category": "miscelaneo",
+            "stock": 478
         }
     ]
 }

@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './styles.css'
 import ItemCount from '../ItemCount'
+import {cart} from '../../../context/CartContext'
 
 const ItemDetail = ({producto}) => {
 
   const [cantidad, setCantidad] = useState(0);
 
-  const onAddToCart = (item) => {
-    setCantidad(item.amount)
-    console.log(`Agregaste ${item.amount} '${item.name}' a tu carrito.`);
+  const {addItem} = useContext(cart)
+  const onAddToCart = (itemAmount) => {
+    setCantidad(itemAmount)
+    addItem(producto, itemAmount)
+    console.log(`Agregaste ${itemAmount} '${producto.title}' a tu carrito.`);
   };
 
   const navigate = useNavigate();
@@ -25,7 +28,7 @@ const ItemDetail = ({producto}) => {
         <p id='detail_price'>${producto.price}</p>
         {
           cantidad === 0 ?
-            <ItemCount stock={17} onAddToCart={onAddToCart}/>
+            <ItemCount stock={producto.stock} onAddToCart={onAddToCart}/>
           :
             <button id='finishPurchaseButton' onClick={onFinishPurchase}>Terminar mi Compra</button>
         }

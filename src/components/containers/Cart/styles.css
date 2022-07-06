@@ -1,3 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import "../../../paleta.css";
+
 #cartContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     margin-top: 100px;
+}
+
+#cartContainer .productContainer {
+    width: 96%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartProduct {
+    width: 100%;
+    max-width: 800px;
+    color: var(--text);
+    background-color: var(--light-background);
+    box-shadow: 0px 0px 10px black;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 20px;
+    border-style: solid;
+    border-color: var(--detail);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartProduct .productTitle {
+    width: 250px;
+}
+
+.cartProduct .priceDescription{
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.priceDescription p{
+    width: 40px;
+}
+
+.cartProduct button{
+    width: 35px;
+    height: 35px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 1px;
+    background-color: var(--alert-background);
+    color: var(--alert-text);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.emptyCartBtn{
+    width: 80%;
+    height: 35px;
+    max-width: 800px;
+    margin: 20px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 1px;
+    background-color: var(--alert-background);
+    color: var(--alert-text);
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#totalText {
+    width: 80%;
+    height: 35px;
+    max-width: 800px;
+    background-color: var(--light-background);
+    border-style: solid;
+    border-color: var(--detail);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    margin: 10px;
+    text-align: center;
+    color: var(--alert-text);
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+}
+
+#emptyCartText {
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    font-weight: bold;
 }
