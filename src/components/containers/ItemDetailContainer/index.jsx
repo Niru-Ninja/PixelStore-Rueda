@@ -21,8 +21,8 @@ const ItemDetailContainer = () => {
         try {
           const response = await promiseProducto;
           const data = await response.json();
-          const producto = data.items.filter(item => item.id === params.id);
-          setDetalleDeProducto(producto[0]);
+          const producto = data.items.find(item => item.id === params.id);
+          setDetalleDeProducto(producto);
         } catch (error) {
           console.log(error);
         }

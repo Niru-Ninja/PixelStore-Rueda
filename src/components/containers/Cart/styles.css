@@ -101,3 +101,17 @@
     font-size: 30px;
     font-weight: bold;
 }
+
+#emptyCartButton {
+    cursor: pointer;
+    font-family: 'VT323', monospace;
+    padding: 5px;
+    margin-top: 10px;
+    color: var(--detail);
+    border-style: solid;
+    border-color: var(--detail);
+    border-width: 2px;
+    border-radius: 10px;
+    background-color: var(--light-background);
+    font-size: 25px;
+}

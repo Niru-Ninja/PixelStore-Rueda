@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
+import {useNavigate} from "react-router-dom";
 import {cart} from '../../../context/CartContext'
 import './styles.css';
 
 const Cart = () => {
 
   const {cartContent, removeItem, clear} = useContext(cart)
+  const navigate = useNavigate();
 
   return (
     <div id="cartContainer">
@@ -26,11 +28,14 @@ const Cart = () => {
                   </div>
               )
             })}
-            <p id='totalText'>TOTAL: ${cartContent.map(prod => {return prod.price*prod.quantity}).reduce((prev, cur) => prev+cur, 0)}</p>
+            <p id='totalText'>TOTAL: ${cartContent.reduce((acum, item) => {return (acum + item.price * item.quantity)}, 0)}</p>
             <button className='emptyCartBtn' onClick={clear}>Vaciar Carrito</button>
           </div>
         :
-        <div id='emptyCartText'>¡Carrito Vacio!</div>
+        <>
+          <div id='emptyCartText'>¡Carrito Vacio!</div>
+          <button id='emptyCartButton' onClick={()=>{navigate('/');}}>Volver</button>
+        </>
       }
     </div>
   )

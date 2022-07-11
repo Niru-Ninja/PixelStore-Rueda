@@ -7,7 +7,6 @@ const CartContext = ({children}) => {
     const [cartContent, setCartContent] = useState([]);
 
     const addItem = (item, quantity) => {
-      console.log(item, quantity);
       const productoEnCart = isInCart(item);
       if (productoEnCart){
         productoEnCart.quantity += quantity
