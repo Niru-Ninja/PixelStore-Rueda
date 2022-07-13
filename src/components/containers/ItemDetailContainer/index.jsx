@@ -1,45 +1,37 @@
-import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
-import './styles.css';
-import ItemDetail from '../../presentation/ItemDetail';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../../firebase/config";
+import "./styles.css";
+import ItemDetail from "../../presentation/ItemDetail";
 
 const ItemDetailContainer = () => {
-    const [detalleDeProducto, setDetalleDeProducto] = useState({});
+  const [detalleDeProducto, setDetalleDeProducto] = useState({});
 
-    const params = useParams()
+  const params = useParams();
 
-    useEffect(() => {
-      const promiseProducto = new Promise ((accept, reject) => {
-        setTimeout(() => {
-          const productDB = fetch('/mocks/data.json');
-          //const producto = fetch(`https://fakestoreapi.com/products/${params.id}`);
-          accept(productDB);
-        }, 2000);
-      })
-
+  useEffect(() => {
     const getProducto = async () => {
-        try {
-          const response = await promiseProducto;
-          const data = await response.json();
-          const producto = data.items.find(item => item.id === params.id);
-          setDetalleDeProducto(producto);
-        } catch (error) {
-          console.log(error);
-        }
-    }
-    getProducto()
-    }, [params])
+      const docRef = doc(db, "products", params.id);
+      const docSnap = await getDoc(docRef);
 
-    return (
-        <div id="itemDetailContainer">
-            {
-            Object.keys(detalleDeProducto).length > 0 ?
-            <ItemDetail producto={detalleDeProducto}/>
-            :
-            null
-            }
-        </div>
-    )
-}
+      if (docSnap.exists()) {
+        const producto = {id: docSnap.id, ...docSnap.data()};
+        setDetalleDeProducto(producto);
+      } else {
+        console.log("No such document!");
+      }
+    };
+    getProducto();
+  }, [params]);
 
-export default ItemDetailContainer
+  return (
+    <div id="itemDetailContainer">
+      {Object.keys(detalleDeProducto).length > 0 ? (
+        <ItemDetail producto={detalleDeProducto} />
+      ) : null}
+    </div>
+  );
+};
+
+export default ItemDetailContainer;
