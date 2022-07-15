@@ -4,9 +4,11 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebase/config";
 import "./styles.css";
 import ItemDetail from "../../presentation/ItemDetail";
+import Loader from "../../Loader";
 
 const ItemDetailContainer = () => {
   const [detalleDeProducto, setDetalleDeProducto] = useState({});
+  const [loader, setLoader] = useState(true);
 
   const params = useParams();
 
@@ -16,7 +18,8 @@ const ItemDetailContainer = () => {
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        const producto = {id: docSnap.id, ...docSnap.data()};
+        setLoader(false)
+        const producto = { id: docSnap.id, ...docSnap.data() };
         setDetalleDeProducto(producto);
       } else {
         console.log("No such document!");
@@ -25,12 +28,15 @@ const ItemDetailContainer = () => {
     getProducto();
   }, [params]);
 
-  return (
-    <div id="itemDetailContainer">
-      {Object.keys(detalleDeProducto).length > 0 ? (
-        <ItemDetail producto={detalleDeProducto} />
-      ) : null}
-    </div>
+  return(
+    loader ?
+      <Loader/>
+    :
+      <div id="itemDetailContainer">
+        {Object.keys(detalleDeProducto).length > 0 ? (
+          <ItemDetail producto={detalleDeProducto} />
+        ) : null}
+      </div>
   );
 };
 

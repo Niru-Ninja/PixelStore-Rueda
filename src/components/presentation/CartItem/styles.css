@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
+@import "../../../paleta.css";
+
+.cartProduct {
+    width: 100%;
+    max-width: 800px;
+    color: var(--text);
+    background-color: var(--light-background);
+    box-shadow: 0px 0px 10px black;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 20px;
+    border-style: solid;
+    border-color: var(--detail);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartProduct .productTitle {
+    width: 250px;
+}
+
+.cartProduct .priceDescription{
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.priceDescription p{
+    width: 40px;
+}
+
+.cartProduct button{
+    width: 35px;
+    height: 35px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 1px;
+    background-color: var(--alert-background);
+    color: var(--alert-text);
+    font-weight: bold;
+    cursor: pointer;
+}
