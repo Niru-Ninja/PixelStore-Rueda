@@ -4,7 +4,7 @@ import { collection, query, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase/config";
 import ItemList from "../../presentation/ItemList";
 import "./styles.css";
-import Loader from "../../Loader";
+import Loader from "../../presentation/Loader";
 
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);

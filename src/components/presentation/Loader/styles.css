@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-@import "../../paleta.css";
+@import "../../../paleta.css";
 
 #Loader {
   font-family: "VT323", monospace;
@@ -11,5 +11,6 @@
   transform: translate(-50%, -50%);
   line-height: 0px;
   font-size: 45px;
+  font-weight: bold;
   z-index: 11;
 }

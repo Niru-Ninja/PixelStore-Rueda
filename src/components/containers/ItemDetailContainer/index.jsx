@@ -4,7 +4,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebase/config";
 import "./styles.css";
 import ItemDetail from "../../presentation/ItemDetail";
-import Loader from "../../Loader";
+import Loader from "../../presentation/Loader";
 
 const ItemDetailContainer = () => {
   const [detalleDeProducto, setDetalleDeProducto] = useState({});

@@ -18,11 +18,29 @@
     border-color: black;
     border-radius: 10px;
     border-width: 1px;
+    box-shadow: 0px 0px 10px black;
     background-color: var(--alert-background);
     color: var(--alert-text);
     font-family: 'VT323', monospace;
     font-size: 25px;
     cursor: pointer;
+}
+
+#buyButton {
+    width: 80%;
+    height: 35px;
+    max-width: 800px;
+    background-color: var(--light-background);
+    border-style: solid;
+    border-color: var(--lighter-detail);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    margin-top: 50px;
+    text-align: center;
+    color: var(--lighter-detail);
+    cursor: pointer;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
 }
 
 #totalText {
