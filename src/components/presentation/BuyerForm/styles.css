@@ -1,0 +1,22 @@
+@import "../../../paleta.css";
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    margin: 20px 5px;
+}
+
+.input-text {
+    border-style: solid;
+    border-color: var(--detail);
+    border-radius: 10px;
+    padding: 5px;
+    width: 80%;
+    margin: 5px;
+    background-color: var(--light-background);
+    color: var(--alert-text);
+    font-weight: bold;
+}

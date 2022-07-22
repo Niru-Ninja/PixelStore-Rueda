@@ -5,10 +5,12 @@ import { db } from "../../../firebase/config";
 import ItemList from "../../presentation/ItemList";
 import "./styles.css";
 import Loader from "../../presentation/Loader";
+import ModalIt from "../../presentation/ModalIt";
 
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
   const [loader, setLoader] = useState(true);
+  const [modalError, setModalError] = useState(null)
   const params = useParams();
   const category = params.id;
 
@@ -30,7 +32,7 @@ const ItemListContainer = ({ greeting }) => {
         setLoader(false);
         setProductos(data);
       } catch (error) {
-        console.log(error);
+        setModalError(error);
       }
     };
     getProductos();
@@ -45,6 +47,13 @@ const ItemListContainer = ({ greeting }) => {
           {greeting}
         </h2>
         {productos.length > 0 ? <ItemList products={productos} /> : null}
+        {modalError ? <ModalIt 
+          headerText='Hubo un error'
+          buttonText='Ok'>
+          <p>{modalError}</p>
+        </ModalIt>
+        :
+        null}
       </div>
   );
 };

@@ -1,10 +1,12 @@
 import React, {createContext, useState} from 'react'
+import guardarOrden from '../utils/guardarOrden';
 
 export const cart = createContext();
 
 const CartContext = ({children}) => {
 
     const [cartContent, setCartContent] = useState([]);
+    const [orden, setOrden] = useState({});
 
     const addItem = (item, quantity) => {
       const productoEnCart = isInCart(item);
@@ -32,8 +34,21 @@ const CartContext = ({children}) => {
       return cartContent.reduce((acum, item) => {return acum + item.price * item.quantity;}, 0)
     }
 
+    const generarOrdenDeCompra = async(datos) => {
+      const ordenDeCompra = {
+        buyer: datos,
+        items: cartContent,
+        date: new Date().toLocaleString(),
+        total: calcularTotal()
+      }
+      let returnOrder = await guardarOrden(cartContent, ordenDeCompra);
+      console.log(`CartContext = ${returnOrder.success} ${returnOrder.value}`);
+      setOrden(returnOrder);
+      return returnOrder;
+    }
+
   return (
-    <cart.Provider value={{cartContent, setCartContent, addItem, removeItem, clear, calcularTotal}}>
+    <cart.Provider value={{cartContent, setCartContent, addItem, removeItem, clear, calcularTotal, orden, setOrden, generarOrdenDeCompra}}>
         {children}
     </cart.Provider>
   )

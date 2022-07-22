@@ -3,34 +3,39 @@ import { cart } from "../../../context/CartContext";
 import {useNavigate} from "react-router-dom";
 import CartList from '../../presentation/CartList';
 import './styles.css';
-import guardarOrden from '../../../utils/guardarOrden';
+import ModalIt from '../../presentation/ModalIt';
 
 const Cart = () => {
   const navigate = useNavigate();
-  const {cartContent, calcularTotal} = useContext(cart)
-
-  const generarOrdenDeCompra = () => {
-    const ordenDeCompra = {
-      buyer: {name: 'Ramiro Ramirez', phone: '1587923468', email: 'ramiro@ramirez.com'},
-      items: cartContent,
-      date: new Date().toLocaleString(),
-      total: calcularTotal()
-    }
-    console.log(ordenDeCompra);
-    guardarOrden(cartContent, ordenDeCompra);
-  }
+  const {cartContent, orden} = useContext(cart)
 
   return (
     <div id="cartContainer">
       {
         cartContent.length !== 0 ?
-          <CartList generarOrdenDeCompra={generarOrdenDeCompra}/>
+          <CartList/>
         :
         <>
           <div id='emptyCartText'>¡Carrito Vacio!</div>
           <button id='emptyCartButton' onClick={()=>{navigate('/');}}>Volver</button>
         </>
       }
+      {Object.keys(orden).length !== 0 ?
+        orden.success ?
+         <ModalIt
+          headerText='Se ha completado la orden'
+          buttonText='Volver al inicio'
+          redirectTo='/'>
+            <p>{`La orden se completó con la ID: ${orden.value}`}</p>
+         </ModalIt>
+        :
+          <ModalIt
+            headerText='Hubo un error con su orden'
+            buttonText='Ok'>
+              <p>{orden.value}</p>
+          </ModalIt>
+      :
+        null}
     </div>
   )
 }

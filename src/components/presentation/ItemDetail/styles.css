@@ -50,11 +50,24 @@
     font-family: 'VT323', monospace;
     font-size: 20px;
     cursor: pointer;
-    margin-top: 10px;
     width: 100%;
+    margin-top: 10px;
     background-color: rgba(0,0,0,0);
     border-style: solid;
     border-color: var(--text);
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+#backButton{
+    color: var(--lighter-detail);
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+    background-color: var(--light-background);
+    border-style: solid;
+    border-color: var(--lighter-detail);
     border-width: 2px;
     border-radius: 10px;
 }

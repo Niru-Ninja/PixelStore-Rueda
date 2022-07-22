@@ -12,7 +12,6 @@ const ItemDetail = ({producto}) => {
   const onAddToCart = (itemAmount) => {
     setCantidad(itemAmount)
     addItem(producto, itemAmount)
-    console.log(`Agregaste ${itemAmount} '${producto.title}' a tu carrito.`);
   };
 
   const navigate = useNavigate();
@@ -30,7 +29,10 @@ const ItemDetail = ({producto}) => {
           cantidad === 0 ?
             <ItemCount stock={producto.stock} onAddToCart={onAddToCart}/>
           :
+          <div style={{width:'100%', marginTop:'10px'}}>
+            <button id='backButton' onClick={() => {navigate('/')}}>Seguir comprando</button>
             <button id='finishPurchaseButton' onClick={onFinishPurchase}>Terminar mi Compra</button>
+          </div>
         }
     </div>
   )

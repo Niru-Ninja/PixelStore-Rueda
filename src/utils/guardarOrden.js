@@ -4,8 +4,9 @@ import { db } from "../firebase/config"
 const guardarOrden = async(cartContent, orden) => {
     const outOfStock = []
     const batch = writeBatch(db)
+    let returnValue = {success: false, value: ''}
 
-    cartContent.forEach(async(producto) => {
+    await Promise.all(cartContent.map(async(producto) => {
         let docRef = doc(db, "products", producto.id);
         let docSnap = await getDoc(docRef);
         let productoDb = {id: docSnap.id , ...docSnap.data()};
@@ -18,24 +19,35 @@ const guardarOrden = async(cartContent, orden) => {
             else{
                 outOfStock.push(producto);
             }
-          } else {
-            console.log("La id del producto en el carrito no se encontró en la base de datos.");
-            console.log(producto);
-          }
+        } else {
+            returnValue.success = false;
+            returnValue.value = `La id del producto ${producto.title} no se encontró en la base de datos.`
+        }
+    })).then(async() => {
+        if(outOfStock.length === 0){
+            try{
+                const savedOrder = await addDoc(collection(db, "orders"), orden);
+                await batch.commit();
+                returnValue.success = true;
+                returnValue.value = savedOrder.id;
+            }
+            catch(error){
+                returnValue.success = false;
+                returnValue.value = `No se guardó la orden: ${error}`;
+            }
+        }
+        else{
+            returnValue.success = false;
+            let messageString = ''
+            outOfStock.length === 1? messageString = 'Producto fuera de stock: ' : messageString = 'Productos fuera de stock: ';
+            outOfStock.forEach((item) => {
+                messageString = messageString + `${item.title}, `;
+            })
+            returnValue.value = messageString.slice(0,-2);
+        };
     });
-    if(outOfStock.length === 0){
-        try{
-            const savedOrder = await addDoc(collection(db, "orders"), orden);
-            await batch.commit();
-            console.log(`Se guardó la orden con la id: ${savedOrder.id}`);
-        }
-        catch(error){
-            console.log(`No se guardó la orden: ${error}`);
-        }
-    }
-    else{
-        console.log(`Productos fuera de stock: ${outOfStock}`);
-    }
+    console.log(`returnvalue= ${returnValue}`);
+    return returnValue;
 }
 
 export default guardarOrden;
