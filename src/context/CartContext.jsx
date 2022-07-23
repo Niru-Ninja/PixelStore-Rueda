@@ -40,11 +40,8 @@ const CartContext = ({children}) => {
         items: cartContent,
         date: new Date().toLocaleString(),
         total: calcularTotal()
-      }
-      let returnOrder = await guardarOrden(cartContent, ordenDeCompra);
-      console.log(`CartContext = ${returnOrder.success} ${returnOrder.value}`);
-      setOrden(returnOrder);
-      return returnOrder;
+      };
+      setOrden(await guardarOrden(cartContent, ordenDeCompra));
     }
 
   return (

@@ -1,29 +1,28 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import { cart } from "../../../context/CartContext";
-import {useNavigate} from "react-router-dom";
 import './styles.css';
 
 const BuyerForm = ({parentStateFunc=''}) => {
   const [showModal, setShowModal] = useState(true);
-  const {generarOrdenDeCompra, setOrden, clear} = useContext(cart)
-  const navigate = useNavigate();
+  const {generarOrdenDeCompra, orden, clear} = useContext(cart)
   /* States de inputs */
   const [nombre, setNombre] = useState('');
   const [telefono, setTelefono] = useState('');
   const [correo, setCorreo] = useState('');
   const [reCorreo, setReCorreo] = useState('');
 
-  const handleClick = async() => {
-    console.log();
-    await generarOrdenDeCompra({name: 'nombre', phone: 'telefono', email: 'correo'}).then((returnOrder)=>{
-      console.log(`Form = ${returnOrder.success} ${returnOrder.value}`);
-      if(returnOrder.success){
+  useEffect(() => {
+    const orderChange = () => {
+      if(orden.success){
         clear();
-        navigate('/');
       }
-      setShowModal(false);
-      setOrden({});
-    });
+    };
+    orderChange();
+  }, [orden, clear]);
+
+  const handleClick = () => {
+    generarOrdenDeCompra({name: nombre, phone: telefono, email: correo});
+    setShowModal(false);
   }
 
   const handleClose = () => {

@@ -46,7 +46,6 @@ const guardarOrden = async(cartContent, orden) => {
             returnValue.value = messageString.slice(0,-2);
         };
     });
-    console.log(`returnvalue= ${returnValue}`);
     return returnValue;
 }
 

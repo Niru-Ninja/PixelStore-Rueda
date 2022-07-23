@@ -1,9 +1,11 @@
-import React, {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { cart } from "../../../context/CartContext";
 import './styles.css';
 
 const ModalIt = ({children, headerText, buttonText='', redirectTo=''}) => {
   const [showModal, setShowModal] = useState(true);
+  const {setOrden} = useContext(cart)
   const navigate = useNavigate();
 
   const handleClick = async(route) => {
@@ -11,6 +13,7 @@ const ModalIt = ({children, headerText, buttonText='', redirectTo=''}) => {
     if(route !== ''){
         navigate(route);
     }
+    setOrden({});
   }
 
   const handleClose = () => {
