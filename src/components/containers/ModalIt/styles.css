@@ -27,7 +27,7 @@
 }
 
 .modal-content {
-  position: relative;
+  position: absolute;
   background-color: var(--lighter-background);
   margin: auto;
   padding: 0;
@@ -64,7 +64,7 @@
     opacity: 0;
   }
   to {
-    top: 75px;
+    top: 150px;
     opacity: 1;
   }
 }

@@ -9,6 +9,8 @@ const CartList = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
   return (
+    <>
+    {mostrarFormulario && <BuyerForm parentStateFunc={setMostrarFormulario}/>}
     <div className="productContainer">
       {cartContent.map((producto) => {
         return <CartItem key={producto.id} producto={producto} removeItem={removeItem} />;
@@ -16,8 +18,8 @@ const CartList = () => {
       <p id="totalText">TOTAL: ${calcularTotal()}</p>
       <button id='buyButton' onClick={() => setMostrarFormulario(!mostrarFormulario)}>Realizar Compra</button>
       <button className="emptyCartBtn" onClick={clear}>Vaciar Carrito</button>
-      {mostrarFormulario && <BuyerForm parentStateFunc={setMostrarFormulario}/>}
     </div>
+    </>
   );
 };
 

@@ -41,7 +41,7 @@ const ItemDetailContainer = () => {
           headerText='Hubo un error'
           buttonText='Volver al inicio'
           redirectTo='/'>
-          <p style={{fontWeight: 'bold'}}>El documento al que pertenece el producto no se encontró en la base de datos.</p> 
+          <p>El documento al que pertenece el producto no se encontró en la base de datos.</p> 
          </ModalIt>
         }
       </div>

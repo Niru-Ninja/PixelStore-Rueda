@@ -16,8 +16,8 @@ const BuyerForm = ({parentStateFunc=''}) => {
   const [valid_correo, setValidCorreo] = useState(true);
   const [valid_reCorreo, setValidReCorreo] = useState(true);
   const [hasTriedToSubmit, setHasTriedToSubmit] = useState(false);
-  const [isFormValid, setIsFormValid] = useState(false);
 
+  /* Effect para limpiar el carrito si la orden se guarda en firebase */
   useEffect(() => {
     const orderChange = () => {
       if(orden.success){
@@ -27,14 +27,13 @@ const BuyerForm = ({parentStateFunc=''}) => {
     orderChange();
   }, [orden, clear]);
 
+  /* Effect para validar el form y generar la orden de compra */
   useEffect(() => {
     const submitClientData = () => {
-      if(isFormValid && hasTriedToSubmit){
-        console.log('Running order. . .');
+      if(valid_nombre && valid_telefono && valid_correo && valid_reCorreo && hasTriedToSubmit){
         generarOrdenDeCompra({name: nombre, phone: telefono, email: correo});
         setShowModal(false);
         setHasTriedToSubmit(false);
-        setIsFormValid(false);
       }
     }
     submitClientData();
@@ -42,41 +41,17 @@ const BuyerForm = ({parentStateFunc=''}) => {
 
   const validateEmail = (mail) => {
     let mailFormat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    if(mail.match(mailFormat)){
-      return (true);
-    }
-    else{
-      return (false);
-    }
+    return mailFormat.test(mail);
   }
 
-  const validForm = () => {
-    let validNombre, validTelefono, validEmail, validReEmail = false;
-    setHasTriedToSubmit(true);
-    nombre.length>1 && nombre.length<51 ? validNombre=true : validNombre=false;
-    !isNaN(telefono) && telefono.length>7 && telefono.length<14 ? validTelefono=true : validTelefono=false;
-    validateEmail(correo) ? validEmail=true : validEmail=false;
-    validateEmail(reCorreo) && correo===reCorreo ? validReEmail=true : validReEmail=false;
-
-    if(validNombre && validTelefono && validEmail && validReEmail){
-      setValidNombre(true);
-      setValidTelefono(true);
-      setValidCorreo(true);
-      setValidReCorreo(true);
-      return true;
-    }
-    else{
-      setValidNombre(validNombre);
-      setValidTelefono(validTelefono);
-      setValidCorreo(validEmail);
-      setValidReCorreo(validReEmail);
-      return false;
-    }
-  }
-
+  /* Click en Confirmar, validamos formulario */
   const handleClick = (event) => {
     event.preventDefault();
-    setIsFormValid(validForm());
+    setHasTriedToSubmit(true);
+    nombre.length>1 && nombre.length<51 ? setValidNombre(true) : setValidNombre(false);
+    !isNaN(telefono) && telefono.length>7 && telefono.length<14 ? setValidTelefono(true) : setValidTelefono(false);
+    setValidCorreo(validateEmail(correo));
+    validateEmail(reCorreo) && correo===reCorreo ? setValidReCorreo(true) : setValidReCorreo(false);
   }
 
   const handleClose = () => {
@@ -111,22 +86,10 @@ const BuyerForm = ({parentStateFunc=''}) => {
           </div>
           <div className="modal-body">
             <form>
-              {valid_nombre ?
-                <input id="nombre" name="nombre" className="input-text-valid" type="text" placeholder="Nombre" required onChange={handleNombre}/>
-              :
-                <input id="nombre" name="nombre" className="input-text-invalid" type="text" placeholder="Nombre" required onChange={handleNombre}/>}
-              {valid_telefono ?
-                <input id="telefono" name="telefono" className="input-text-valid" type="text" placeholder="Teléfono" required onChange={handleTelefono}/>
-              :
-              <input id="telefono" name="telefono" className="input-text-invalid" type="text" placeholder="Teléfono" required onChange={handleTelefono}/>}
-              {valid_correo ?
-                <input id="email" name="email" className="input-text-valid" type="email" placeholder="E-Mail" required onChange={handleCorreo}/>
-              :
-                <input id="email" name="email" className="input-text-invalid" type="email" placeholder="E-Mail" required onChange={handleCorreo}/>}
-              {valid_reCorreo ?
-                <input id="re-email" name="re-email" className="input-text-valid" type="email" placeholder="Repita su E-Mail" required onChange={handleReCorreo}/>
-              :
-              <input id="re-email" name="re-email" className="input-text-invalid" type="email" placeholder="Repita su E-Mail" required onChange={handleReCorreo}/>}
+              <input id="nombre" name="nombre" className={valid_nombre ? "input-text-valid" : "input-text-invalid"} type="text" placeholder="Nombre" required onChange={handleNombre}/>
+              <input id="telefono" name="telefono" className={valid_telefono ? "input-text-valid" : "input-text-invalid"} type="text" placeholder="Teléfono" required onChange={handleTelefono}/>
+              <input id="email" name="email" className={valid_correo ? "input-text-valid" : "input-text-invalid"} type="email" placeholder="E-Mail" required onChange={handleCorreo}/>
+              <input id="re-email" name="re-email" className={valid_reCorreo ? "input-text-valid" : "input-text-invalid"} type="email" placeholder="Repita su E-Mail" required onChange={handleReCorreo}/>
               <button style={{marginTop: '20px'}} className="modal-button" onClick={handleClick}>Confirmar</button>
             </form>
           </div>
