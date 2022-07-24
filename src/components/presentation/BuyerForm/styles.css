@@ -9,9 +9,21 @@ form {
     margin: 20px 5px;
 }
 
-.input-text {
+.input-text-valid {
     border-style: solid;
     border-color: var(--detail);
+    border-radius: 10px;
+    padding: 5px;
+    width: 80%;
+    margin: 5px;
+    background-color: var(--light-background);
+    color: var(--alert-text);
+    font-weight: bold;
+}
+
+.input-text-invalid {
+    border-style: solid;
+    border-color: var(--alert-background);
     border-radius: 10px;
     padding: 5px;
     width: 80%;

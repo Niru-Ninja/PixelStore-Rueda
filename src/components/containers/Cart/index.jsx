@@ -3,7 +3,7 @@ import { cart } from "../../../context/CartContext";
 import {useNavigate} from "react-router-dom";
 import CartList from '../../presentation/CartList';
 import './styles.css';
-import ModalIt from '../../presentation/ModalIt';
+import ModalIt from '../ModalIt';
 
 const Cart = () => {
   const navigate = useNavigate();

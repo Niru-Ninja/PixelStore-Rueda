@@ -5,7 +5,7 @@ import { db } from "../../../firebase/config";
 import "./styles.css";
 import ItemDetail from "../../presentation/ItemDetail";
 import Loader from "../../presentation/Loader";
-import ModalIt from "../../presentation/ModalIt";
+import ModalIt from "../ModalIt";
 
 const ItemDetailContainer = () => {
   const [detalleDeProducto, setDetalleDeProducto] = useState({});
