@@ -46,6 +46,7 @@ const ItemDetailContainer = () => {
         {modalError && <ModalIt
           headerText='Hubo un error'
           buttonText='Volver al inicio'
+          parentStateFunc={setModalError}
           redirectTo='/'>
           <p>El documento al que pertenece el producto no se encontró en la base de datos.</p> 
          </ModalIt>

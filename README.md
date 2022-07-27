@@ -15,3 +15,5 @@ _AVISO LEGAL: PixelStore no se hace responsable por contratos con demonios, desa
 
 No incorporé ninguna librería que no se haya usado en clase. Busco mantener todo simple con css base.
 Se utiliza firebase para hacer la conexión con la base de datos.
+
+LINK AL PROYECTO ONLINE: https://pixelstore-rueda.netlify.app/

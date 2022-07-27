@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import './styles.css'
 import ItemCount from '../ItemCount'
 import {cart} from '../../../context/CartContext'
+import ModalIt from '../../containers/ModalIt'
 
 /**
  * Muestra los detalles del producto cuando se presiona el componente Item.
@@ -13,11 +14,17 @@ import {cart} from '../../../context/CartContext'
 const ItemDetail = ({producto}) => {
 
   const [cantidad, setCantidad] = useState(0);
+  const [modalError, setModalError] = useState(false);
 
   const {addItem} = useContext(cart)
   const onAddToCart = (itemAmount) => {
-    setCantidad(itemAmount)
-    addItem(producto, itemAmount)
+    if(itemAmount > producto.stock){
+      setModalError(true);
+    }
+    else{
+      setCantidad(itemAmount)
+      addItem(producto, itemAmount)
+    }
   };
 
   const navigate = useNavigate();
@@ -40,6 +47,14 @@ const ItemDetail = ({producto}) => {
             <button id='finishPurchaseButton' onClick={onFinishPurchase}>Terminar mi Compra</button>
           </div>
         }
+        {modalError ? <ModalIt 
+          headerText='Hubo un error'
+          buttonText='Ok'
+          parentStateFunc={setModalError}>
+          <p>No hay stock del producto.</p>
+        </ModalIt>
+        :
+        null}
     </div>
   )
 }

@@ -56,7 +56,8 @@ const ItemListContainer = ({ greeting }) => {
         {productos.length > 0 ? <ItemList products={productos} /> : null}
         {modalError ? <ModalIt 
           headerText='Hubo un error'
-          buttonText='Ok'>
+          buttonText='Ok'
+          parentStateFunc={setModalError}>
           <p>{modalError}</p>
         </ModalIt>
         :

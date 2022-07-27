@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext} from 'react';
 import { cart } from "../../../context/CartContext";
 import {useNavigate} from "react-router-dom";
 import CartList from '../../presentation/CartList';
@@ -13,7 +13,7 @@ import ModalIt from '../ModalIt';
 
 const Cart = () => {
   const navigate = useNavigate();
-  const {cartContent, orden} = useContext(cart)
+  const {cartContent, orden, clear} = useContext(cart)
 
   return (
     <div id="cartContainer">
@@ -31,7 +31,8 @@ const Cart = () => {
          <ModalIt
           headerText='Se ha completado la orden'
           buttonText='Volver al inicio'
-          redirectTo='/'>
+          redirectTo='/'
+          auxFunc={clear}>
             <p>{`La orden se completó con la ID: ${orden.value}`}</p>
          </ModalIt>
         :

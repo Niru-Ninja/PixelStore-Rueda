@@ -10,7 +10,7 @@ import './styles.css';
 
 const BuyerForm = ({parentStateFunc=''}) => {
   const [showModal, setShowModal] = useState(true);
-  const {generarOrdenDeCompra, orden, clear} = useContext(cart)
+  const {generarOrdenDeCompra} = useContext(cart)
   /* States de inputs */
   const [nombre, setNombre] = useState('');
   const [telefono, setTelefono] = useState('');
@@ -22,16 +22,6 @@ const BuyerForm = ({parentStateFunc=''}) => {
   const [valid_correo, setValidCorreo] = useState(true);
   const [valid_reCorreo, setValidReCorreo] = useState(true);
   const [hasTriedToSubmit, setHasTriedToSubmit] = useState(false);
-
-  /* Effect para limpiar el carrito si la orden se guarda en firebase */
-  useEffect(() => {
-    const orderChange = () => {
-      if(orden.success){
-        clear();
-      }
-    };
-    orderChange();
-  }, [orden, clear]);
 
   /* Effect para validar el form y generar la orden de compra */
   useEffect(() => {
