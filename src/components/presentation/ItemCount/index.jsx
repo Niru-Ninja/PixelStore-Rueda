@@ -20,7 +20,7 @@ const ItemCount = ({stock, onAddToCart}) => {
             <div id="amountDiv">
                 <button onClick={() => onAddOrSubtract(-1)} disabled={itemAmount === 1 ? true : null}>-</button>
                 <p>{itemAmount}</p>
-                <button onClick={() => onAddOrSubtract(1)} disabled={itemAmount === stock ? true : null}>+</button>
+                <button onClick={() => onAddOrSubtract(1)} disabled={itemAmount >= stock ? true : null}>+</button>
             </div>
             <button id="addToCartButton" onClick={() => onAddToCart(itemAmount)}>Añadir al Carrito</button>
         </div>
