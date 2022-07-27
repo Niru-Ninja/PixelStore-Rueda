@@ -7,6 +7,13 @@ import "./styles.css";
 import Loader from "../../presentation/Loader";
 import ModalIt from "../ModalIt";
 
+/**
+ * Componente que se encarga de traer el listado de productos de la base de datos y mostrar el componente ItemList, pasandole el listado como parámetro.
+ * Puede recibir la categoria de producto por useParams, si es así filtra por categoría antes de mostrar ItemList.
+ * @property {string} greeting Mensaje que se muestra por encima del listado de productos. 
+ * @returns 
+ */
+
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
   const [loader, setLoader] = useState(true);

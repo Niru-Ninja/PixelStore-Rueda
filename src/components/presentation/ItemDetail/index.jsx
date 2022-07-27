@@ -4,6 +4,12 @@ import './styles.css'
 import ItemCount from '../ItemCount'
 import {cart} from '../../../context/CartContext'
 
+/**
+ * Muestra los detalles del producto cuando se presiona el componente Item.
+ * @param {Object} producto Producto del que se mostrarán los detalles.
+ * @returns 
+ */
+
 const ItemDetail = ({producto}) => {
 
   const [cantidad, setCantidad] = useState(0);

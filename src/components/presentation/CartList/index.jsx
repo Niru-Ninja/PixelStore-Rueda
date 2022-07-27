@@ -4,6 +4,12 @@ import BuyerForm from "../BuyerForm";
 import CartItem from "../CartItem";
 import "./styles.css";
 
+/**
+ * Muestra los detalles de la compra, obteniendo el contenido del carrito del CartContext muestra cada producto con un componente CartItem
+ * y realiza la compra a travez de un BuyerForm.
+ * @returns 
+ */
+
 const CartList = () => {
   const { cartContent, removeItem, clear, calcularTotal } = useContext(cart);
   const [mostrarFormulario, setMostrarFormulario] = useState(false);

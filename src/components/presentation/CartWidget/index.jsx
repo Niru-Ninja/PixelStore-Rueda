@@ -2,6 +2,11 @@ import React, {useContext} from 'react'
 import {useNavigate} from "react-router-dom";
 import {cart} from '../../../context/CartContext'
 
+/**
+ * Icono del carrito en la NavBar. Muestra la cantidad de productos en el carrito y redirecciona a /cart cuando lo cliqueás.
+ * @returns 
+ */
+
 const CartWidget = () => {
 
   const navigate = useNavigate();

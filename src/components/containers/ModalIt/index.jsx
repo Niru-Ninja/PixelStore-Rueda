@@ -3,6 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { cart } from "../../../context/CartContext";
 import './styles.css';
 
+/**
+ * Muestra un modal en formato de cartel con un titulo y una cruz para cerrarlo. Se puede utilizar children para colocar lo que se quiera dentro del modal.
+ * @property {string} headerText Título del modal.
+ * @property {string} buttonText (Opcional) Texto que aparece en el botón. Si no se especifica no se mostrará ningún botón.
+ * @property {string} redirectTo (Opcional) Ruta a la que redirecciona cuando se presiona el botón. Si no se especifica no redirecciona a ninguna ruta.
+ * @returns 
+ */
+
 const ModalIt = ({children, headerText, buttonText='', redirectTo=''}) => {
   const [showModal, setShowModal] = useState(true);
   const {setOrden} = useContext(cart)

@@ -5,6 +5,12 @@ import CartList from '../../presentation/CartList';
 import './styles.css';
 import ModalIt from '../ModalIt';
 
+/**
+ * Componente encargado de mostrar el contenido del carrito en la ruta '/cart'. Muestra CartList si hay algo en el carrito, notificando el resultado de la orden
+ * cuando se realiza la compra.
+ * @returns 
+ */
+
 const Cart = () => {
   const navigate = useNavigate();
   const {cartContent, orden} = useContext(cart)

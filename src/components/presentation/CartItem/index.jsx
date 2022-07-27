@@ -1,6 +1,13 @@
 import React from "react";
 import "./styles.css";
 
+/**
+ * Muestra los detalles del producto en el carrito (CartList).
+ * @property {object} producto El producto del cual queremos mostrar los detalles. 
+ * @property {function} removeItem Función que quita el producto del array de productos del carrito.
+ * @returns 
+ */
+
 const CartItem = ({ producto, removeItem }) => {
   return (
     <div className="cartProduct" key={producto.id}>

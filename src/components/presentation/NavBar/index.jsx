@@ -3,6 +3,11 @@ import CartWidget from '../CartWidget';
 import './styles.css';
 import {Link} from 'react-router-dom';
 
+/**
+ * Componente NavBar con los distintos links para direccionar a las diversas partes de la app. 
+ * @returns 
+ */
+
 const NavBar = () => {
 
     function dropdownFunction() {

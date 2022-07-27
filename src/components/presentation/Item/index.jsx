@@ -2,6 +2,13 @@ import React from 'react'
 import './styles.css'
 import {useNavigate} from "react-router-dom";
 
+/**
+ * Muestra el producto en una card con su titulo, imagen, juego del que procede y su precio.
+ * Se utiliza desde el componente ItemList para listar todos los productos disponibles.
+ * @property {Object} product Producto que mostrará la card.
+ * @returns 
+ */
+
 const Item = ({product}) => {
 
   const navigate = useNavigate();

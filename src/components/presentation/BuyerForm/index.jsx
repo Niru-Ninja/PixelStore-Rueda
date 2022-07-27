@@ -2,6 +2,12 @@ import React, {useState, useContext, useEffect} from "react";
 import { cart } from "../../../context/CartContext";
 import './styles.css';
 
+/**
+ * Modal con formulario para que el cliente complete sus datos antes de realizar la compra.
+ * @property {function} parentStateFunc Función de setState que determina si el BuyerForm debe mostrarse o no.
+ * @returns 
+ */
+
 const BuyerForm = ({parentStateFunc=''}) => {
   const [showModal, setShowModal] = useState(true);
   const {generarOrdenDeCompra, orden, clear} = useContext(cart)
@@ -34,6 +40,7 @@ const BuyerForm = ({parentStateFunc=''}) => {
         generarOrdenDeCompra({name: nombre, phone: telefono, email: correo});
         setShowModal(false);
         setHasTriedToSubmit(false);
+        parentStateFunc(false);
       }
     }
     submitClientData();

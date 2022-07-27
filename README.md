@@ -1,3 +1,5 @@
+![app-flow-demo](./flowDemo.gif)
+
 # Pixel Store
 
 La única tienda online donde podrás conseguir items de videojuegos... ¡En la vida real!
@@ -11,4 +13,5 @@ _AVISO LEGAL: PixelStore no se hace responsable por contratos con demonios, desa
 
 # Sobre el Proyecto:
 
-De momento no incorporé ninguna librería que no se haya usado en clase. Busco mantener todo simple con css base.
+No incorporé ninguna librería que no se haya usado en clase. Busco mantener todo simple con css base.
+Se utiliza firebase para hacer la conexión con la base de datos.
